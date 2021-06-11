@@ -16,13 +16,10 @@
                 <li v-for="(todoItem, index) in todoItems">
                     {{todoItem}}
                     <button v-on:click="removeItem(todoItem,index)">remove</button>
-                </li>
-               
+                </li>               
             </ul>
         </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -36,15 +33,11 @@
                 this.fetchItems();
             },
             methods:{
-                addItem:function(event){                    
-                    // if(event.keyCode==13){
-                        // console.log(event);
+                addItem:function(event){       
                         var value = this.inputText;
                         localStorage.setItem(value,value);
                         this.inputText='';
-                        this.todoItems.push(value);
-                    // }
-                    
+                        this.todoItems.push(value);                    
                 },
                 removeItem:function(todoItem, index){
                     console.log(todoItem, index);
